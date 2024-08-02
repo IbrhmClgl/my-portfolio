@@ -25,7 +25,7 @@ const Homepage = () => {
         <div className="h-1/2 lg:h-full lg:w-1/2 lg:p-10 flex flex-col gap-8 items-center justify-center">
           {/* Title */}
           <h2 className="text-4xl md:text-6xl font-bold">
-            Hello this is my cv
+            Hello this is my cv !
           </h2>
           <p className="md:text-xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
