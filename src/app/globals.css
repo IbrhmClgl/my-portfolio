@@ -580,3 +580,7 @@
     transform: translateY(-2000px);
   }
 }
+
+#bg-portfolio {
+  background-color: white;
+}
