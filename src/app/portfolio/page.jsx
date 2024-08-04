@@ -65,7 +65,7 @@ const PortfolioPage = () => {
       >
         <div className="h-[600vh] relative" ref={containerRef}>
           <div className="w-screen h-[calc(100vh-6rem)] flex flex-col items-center justify-center text-8xl text-center">
-            <h1 className="text-8xl text-center">My recent Projects</h1>
+            <h1 className="text-6xl text-center">My recent Projects</h1>
             {/* BIOGRAPHY SCROLL SVG */}
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}

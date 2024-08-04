@@ -19,6 +19,13 @@
   display: none;
 }
 
+@media screen and (max-width: 380px) {
+  #myimage {
+    margin-bottom: 70px;
+    margin-top: -40px;
+  }
+}
+
 #stars {
   width: 1px;
   height: 1px;
