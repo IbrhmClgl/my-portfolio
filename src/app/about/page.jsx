@@ -288,7 +288,7 @@ const AboutPage = () => {
                 <div className="w-1/3 bg-gray-900/50">
                   {/* JOB TITLE */}
                   <div className="bg-white text-black p-3 font-semibold rounded-b-lg rounded-z-lg">
-                    Internal IT Administrator
+                    Internal IT Admin
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic">Lorem ipsum...</div>
