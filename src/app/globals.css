@@ -26,6 +26,17 @@
   }
 }
 
+@media screen and (max-width: 912px) {
+  #form {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+  }
+  #text {
+    text-align: center;
+  }
+}
+
 #stars {
   width: 1px;
   height: 1px;
