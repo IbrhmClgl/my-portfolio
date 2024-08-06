@@ -43,7 +43,6 @@ const Homepage = () => {
               <a href="/contact">Contact me</a>
             </button>
             <a
-              href=""
               className="p-4 rounded-full ring-1 ring-white bg-black"
               download={'ibrahim-cv.pdf'}
             >
