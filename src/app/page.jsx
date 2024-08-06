@@ -15,6 +15,7 @@ const Homepage = () => {
         {/* Image Container */}
         <div id="myimage" className="h-1/3 relative lg:h-full lg:w-1/2">
           <Image
+            id="image"
             src="/image.png"
             alt=""
             fill

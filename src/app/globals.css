@@ -19,7 +19,7 @@
   display: none;
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 390px) {
   #myimage {
     margin-bottom: 70px;
     margin-top: -40px;
