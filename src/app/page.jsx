@@ -35,18 +35,19 @@ const Homepage = () => {
           </p>
           {/* Buttons */}
           <div className="w-full flex gap-4">
-            <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white">
-              View my work
+            <button className="p-4 rounded-lg ring-1 ring-white bg-black text-white">
+              <a href="/portfolio">View my work</a>
             </button>
-            <button className="p-4 rounded-lg ring-1 ring-black bg-black">
-              Contact me
+            <button className="p-4 rounded-lg ring-1 ring-white bg-black">
+              <a href="/contact">Contact me</a>
             </button>
-            <button
-              id="bounce"
+            <a
+              href=""
               className="p-4 rounded-full ring-1 ring-white bg-black"
+              download={'ibrahim-cv.pdf'}
             >
               Download cv
-            </button>
+            </a>
           </div>
         </div>
       </div>
