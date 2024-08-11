@@ -30,21 +30,22 @@ const Homepage = () => {
         <div className="h-1/2 lg:h-full lg:w-1/2 lg:p-10 flex flex-col gap-8 items-center justify-center">
           {/* Title */}
           <h2 className="text-4xl md:text-6xl font-bold">
-            Hello this is my cv !
+            Willkommen auf meinem Portfolio !
           </h2>
           <p className="md:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            iusto, sit architecto non, dolore a asperiores ipsam quidem
-            voluptatibus magni illum obcaecati possimus ratione sed ab quisquam
-            eum est labore.
+            Hier findest du einen Überblick über meine Arbeit, meinen Werdegang
+            und die Projekte, die meine Leidenschaft für Programmierung
+            widerspiegeln. Tauche ein in meinen Lebenslauf, um mehr über meine
+            Erfahrungen zu erfahren, und entdecke die spannenden Projekte, an
+            denen ich mit Begeisterung gearbeitet habe.
           </p>
           {/* Buttons */}
           <div className="w-full flex gap-4">
             <button className="p-4 rounded-lg ring-1 ring-white bg-black text-white">
-              <a href="/portfolio">View my work</a>
+              <a href="/portfolio">Meine Projekte</a>
             </button>
             <button className="p-4 rounded-lg ring-1 ring-white bg-black">
-              <a href="/contact">Contact me</a>
+              <a href="/contact">Kontaktiere mich</a>
             </button>
             <a
               href="/ibrahim-cv.pdf"

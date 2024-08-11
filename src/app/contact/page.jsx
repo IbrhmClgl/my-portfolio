@@ -5,7 +5,7 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import React, { useRef } from 'react';
 
-const text = 'Say Hello';
+const text = 'Kontaktiere mich !';
 
 const ContactPage = () => {
   const [success, setSuccess] = useState(false);
@@ -57,6 +57,7 @@ const ContactPage = () => {
                 transition={{
                   duration: 3,
                   repeat: Infinity,
+                  repeatDelay: text.length * 0.1,
                   delay: index * 0.1,
                 }}
               >

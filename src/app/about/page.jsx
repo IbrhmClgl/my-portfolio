@@ -35,14 +35,18 @@ const AboutPage = () => {
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             {/* BIOGRAPHY DESC */}
             <p className="text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              harum quibusdam cupiditate nobis accusamus sed aut aperiam,
-              reiciendis numquam! Voluptas voluptatibus obcaecati dolore itaque
-              suscipit! Vel doloremque numquam quam nihil.
+              Ich bin ein leidenschaftlicher Programmierer mit umfassender
+              Erfahrung in Startups sowie mittelständischen Unternehmen.
+              Herausforderungen sind meine Motivation, und ich liebe es,
+              innovative Lösungen mit JavaScript und modernen
+              JavaScript-Frameworks zu entwickeln. Mit meinem tiefen Verständnis
+              der Technologie und meiner Begeisterung für stetige
+              Weiterentwicklung bringe ich frischen Wind in jedes Projekt.
             </p>
             {/* BIOGRAPHY QUOTE */}
             <span className="italic">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Code ist meine Leidenschaft, Herausforderungen mein Antrieb – mit
+              JavaScript gestalte ich die Zukunft.
             </span>
             {/* BIOGRAPHY SCROLL SVG */}
             <motion.svg
@@ -187,9 +191,14 @@ const AboutPage = () => {
                     Teaching Assistant
                   </div>
                   {/* JOB DESC */}
-                  <div className="p-3 text-sm italic">
-                    Teaching and supporting students in learning HTML, CSS, JS &
-                    Vue.js
+                  <div className="p-3 text-sm italic flex flex-col">
+                    <p>
+                      - Teaching and supporting students in HTML, CSS, JS and
+                      Vue.js.{' '}
+                    </p>
+                    <p>- Support students in their final project</p>
+                    <p>- Build company website with Astro js</p>
+                    <p>- Prepare coding katas</p>
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-blue-400 text-sm font-semibold">
@@ -227,10 +236,12 @@ const AboutPage = () => {
                 <div className="w-1/3 bg-gray-900/50">
                   {/* JOB TITLE */}
                   <div className="bg-white text-black p-3 font-semibold rounded-b-lg rounded-z-lg">
-                    Junior Software Developer
+                    Junior Fullstack Developer
                   </div>
                   {/* JOB DESC */}
-                  <div className="p-3 text-sm italic">Building Websites</div>
+                  <div className="p-3 text-sm italic">
+                    - Building websites with Next.js & Tailwind for customers
+                  </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-blue-400 text-sm font-semibold">
                     09.2023 - 03.2024
@@ -250,8 +261,9 @@ const AboutPage = () => {
                     Automation Developer
                   </div>
                   {/* JOB DESC */}
-                  <div className="p-3 text-sm italic">
-                    Programming automation scripts for company processes{' '}
+                  <div className="p-3 text-sm italic flex flex-col">
+                    <p>- Automation of internal processes</p>
+                    <p>- Unit testing</p>
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-blue-400 text-sm font-semibold">
@@ -291,7 +303,16 @@ const AboutPage = () => {
                     Internal IT Admin
                   </div>
                   {/* JOB DESC */}
-                  <div className="p-3 text-sm italic">Lorem ipsum...</div>
+                  <div className="p-3 text-sm italic flex flex-col">
+                    <p>
+                      - Responsible for network and hardware, as well as their
+                      maintenance
+                    </p>
+                    <p>- Software administration</p>
+                    <p>- Hardware support</p>
+                    <p>- Support of employees via helpdesk</p>
+                    <p>IT onboarding </p>
+                  </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-blue-400 text-sm font-semibold">
                     01.2020 - 08.2022
