@@ -24,6 +24,10 @@
     margin-bottom: 70px;
     margin-top: -40px;
   }
+
+  #image {
+    margin-top: 20px;
+  }
 }
 
 @media screen and (max-width: 912px) {

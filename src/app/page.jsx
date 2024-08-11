@@ -13,14 +13,18 @@ const Homepage = () => {
     >
       <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         {/* Image Container */}
-        <div id="myimage" className="h-1/3 relative lg:h-full lg:w-1/2">
+        <div
+          id="myimage"
+          className="h-1/3 relative lg:h-full lg:w-1/2 flex justify-center items-center"
+        >
           <Image
             id="image"
-            src="/image.png"
+            src="/myimage.png"
             alt=""
             fill
             className="object-contain rounded-full"
           />
+          <div className="circle"></div>
         </div>
         {/* Text Container */}
         <div className="h-1/2 lg:h-full lg:w-1/2 lg:p-10 flex flex-col gap-8 items-center justify-center">
