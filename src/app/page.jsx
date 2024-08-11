@@ -42,15 +42,13 @@ const Homepage = () => {
             <button className="p-4 rounded-lg ring-1 ring-white bg-black">
               <a href="/contact">Contact me</a>
             </button>
-            <button>
-              <a
-                href="/ibrahim-cv.pdf"
-                className="p-4 rounded-full ring-1 ring-white bg-black"
-                download={'cv'}
-              >
-                Download cv
-              </a>
-            </button>
+            <a
+              href="/ibrahim-cv.pdf"
+              className="p-4 rounded-full ring-1 ring-white bg-black"
+              download={'cv'}
+            >
+              Download cv
+            </a>
           </div>
         </div>
       </div>
