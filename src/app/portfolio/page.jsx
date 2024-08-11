@@ -43,13 +43,8 @@ const PortfolioPage = () => {
   const containerRef = useRef();
 
   const { scrollYProgress } = useScroll({ container: containerRef });
+
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '-80%']);
-
-  const skillRef = useRef();
-  const isSkillRefInView = useInView(skillRef, { margin: '-100px' });
-
-  const experienceRef = useRef();
-  const isExperienceRefInView = useInView(experienceRef, { margin: '-100px' });
 
   return (
     <motion.div
@@ -73,7 +68,6 @@ const PortfolioPage = () => {
               transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
               viewBox="0 0 24 24"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg"
               width={50}
               height={50}
             >
@@ -92,7 +86,7 @@ const PortfolioPage = () => {
           </div>
           <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
             <motion.div style={{ x }} className="flex">
-              <div className="h-screen w-screen flex items-center justify-center " />
+              <div className="h-screen w-screen flex items-center justify-center" />
               {items.map((item) => (
                 <div
                   className={`h-screen w-screen flex items-center justify-center`}
