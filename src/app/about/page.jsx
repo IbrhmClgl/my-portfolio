@@ -2,6 +2,9 @@
 import Brain from '@/components/brain';
 import { motion, useInView, useScroll } from 'framer-motion';
 import { useRef } from 'react';
+import { languagesStore } from '@/app/store/languageState';
+import deData from '@/app/store/languages/de/german.json';
+import engData from '@/app/store/languages/eng/english.json';
 
 const AboutPage = () => {
   const containerRef = useRef();
@@ -13,6 +16,8 @@ const AboutPage = () => {
 
   const experienceRef = useRef();
   const isExperienceRefInView = useInView(experienceRef, { margin: '-100px' });
+
+  const currentLanguage = languagesStore((state) => state.lang);
 
   return (
     <motion.div
@@ -32,21 +37,18 @@ const AboutPage = () => {
           {/* BIOGRAPHY CONTAINER */}
           <div className="flex flex-col gap-12 justify-center">
             {/* BIOGRAPHY TITLE */}
-            <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
+            <h1 className="font-bold text-2xl">
+              {currentLanguage == 'de' ? deData.biography : engData.biography}
+            </h1>
             {/* BIOGRAPHY DESC */}
             <p className="text-lg">
-              Ich bin ein leidenschaftlicher Programmierer mit umfassender
-              Erfahrung in Startups sowie mittelständischen Unternehmen.
-              Herausforderungen sind meine Motivation, und ich liebe es,
-              innovative Lösungen mit JavaScript und modernen
-              JavaScript-Frameworks zu entwickeln. Mit meinem tiefen Verständnis
-              der Technologie und meiner Begeisterung für stetige
-              Weiterentwicklung bringe ich frischen Wind in jedes Projekt.
+              {currentLanguage == 'de'
+                ? deData.biographydesc
+                : engData.biographydesc}
             </p>
             {/* BIOGRAPHY QUOTE */}
             <span className="italic">
-              Code ist meine Leidenschaft, Herausforderungen mein Antrieb – mit
-              JavaScript gestalte ich die Zukunft.
+              {currentLanguage == 'de' ? deData.quote : engData.quote}
             </span>
             {/* BIOGRAPHY SCROLL SVG */}
             <motion.svg
@@ -174,7 +176,7 @@ const AboutPage = () => {
               transition={{ delay: 0.2 }}
               className="font-bold text-2xl"
             >
-              EXPERIENCE
+              {currentLanguage == 'de' ? deData.experience : engData.experience}
             </motion.h1>
             {/* EXPERIENCE LIST */}
             <motion.div
@@ -192,17 +194,14 @@ const AboutPage = () => {
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic flex flex-col">
-                    <p>
-                      - Teaching and supporting students in HTML, CSS, JS and
-                      Vue.js.{' '}
-                    </p>
-                    <p>- Support students in their final project</p>
-                    <p>- Build company website with Astro js</p>
-                    <p>- Prepare coding katas</p>
+                    <p>-{currentLanguage == 'de' ? deData.ta1 : engData.ta1}</p>
+                    <p>-{currentLanguage == 'de' ? deData.ta2 : engData.ta2}</p>
+                    <p>-{currentLanguage == 'de' ? deData.ta3 : engData.ta3}</p>
+                    <p>-{currentLanguage == 'de' ? deData.ta4 : engData.ta4}</p>
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-blue-400 text-sm font-semibold">
-                    03.2024 - Present
+                    {currentLanguage == 'de' ? deData.tadate : engData.tadate}
                   </div>
                   {/* JOB COMPANY */}
                   <div className="p-1 rounded bg-gray-400 text-black text-sm font-semibold w-full">
@@ -240,7 +239,7 @@ const AboutPage = () => {
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic">
-                    - Building websites with Next.js & Tailwind for customers
+                    {currentLanguage == 'de' ? deData.jfd : engData.jfd}
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-blue-400 text-sm font-semibold">
@@ -262,8 +261,8 @@ const AboutPage = () => {
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic flex flex-col">
-                    <p>- Automation of internal processes</p>
-                    <p>- Unit testing</p>
+                    <p>-{currentLanguage == 'de' ? deData.ad1 : engData.ad1}</p>
+                    <p>-{currentLanguage == 'de' ? deData.ad2 : engData.ad2}</p>
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-blue-400 text-sm font-semibold">
@@ -305,13 +304,20 @@ const AboutPage = () => {
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic flex flex-col">
                     <p>
-                      - Responsible for network and hardware, as well as their
-                      maintenance
+                      -{currentLanguage == 'de' ? deData.iia1 : engData.iia1}
                     </p>
-                    <p>- Software administration</p>
-                    <p>- Hardware support</p>
-                    <p>- Support of employees via helpdesk</p>
-                    <p>IT onboarding </p>
+                    <p>
+                      -{currentLanguage == 'de' ? deData.iia2 : engData.iia2}
+                    </p>
+                    <p>
+                      -{currentLanguage == 'de' ? deData.iia3 : engData.iia3}
+                    </p>
+                    <p>
+                      -{currentLanguage == 'de' ? deData.iia4 : engData.iia4}
+                    </p>
+                    <p>
+                      -{currentLanguage == 'de' ? deData.iia5 : engData.iia5}
+                    </p>
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-blue-400 text-sm font-semibold">

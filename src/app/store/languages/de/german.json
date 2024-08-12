@@ -20,5 +20,17 @@
   "iia3": "- Hardware support",
   "iia4": "- Unterstützung der Mitarbeiter über den Helpdesk",
   "iia5": "- IT Onboarding",
-  "portfoliomsg": "Meine letzten Projekte"
+  "portfoliomsg": "Meine letzten Projekte",
+  "ramblermsg": "Beta-Version einer Sightseeing-Abenteuer-App",
+  "cleanappsmsg": "Beta-Version der Website eines Startup-Unternehmens",
+  "pwgenmsg": "Klassischer Passwort Generator",
+  "hangmanmsg": "Ein einfaches Hangman-Spiel mit bestimmten Entwicklerwörtern",
+  "contactmsg": "Kontaktiere mich!",
+  "contactmsg1": "Deine Nachricht:",
+  "contactmsg2": "Deine email Adresse:",
+  "contactmsg3": "Mit freundlichen Grüßen",
+  "contactbtnmsg": "Senden",
+  "contactmsg4": "Deine Nachricht wurde erfolgreich gesendet",
+  "contactmsg5": "Etwas ist schief gelaufen.",
+  "contactmsg6": "Bitte füllen Sie alle Felder aus."
 }

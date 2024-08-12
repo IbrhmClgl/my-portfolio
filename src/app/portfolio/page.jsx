@@ -3,43 +3,49 @@ import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
-
-const items = [
-  {
-    id: '1',
-    color: 'white',
-    title: 'Rambler',
-    desc: 'Beta version of a sight seeing adventure app',
-    img: '/rambler-app.png',
-    link: 'https://rambler-app.netlify.app/',
-  },
-  {
-    id: '2',
-    color: 'white',
-    title: 'cleanapps beta website',
-    desc: 'Beta version of a startup company website',
-    img: '/cleanapps-beta.png',
-    link: 'https://cleanapps-beta.netlify.app/',
-  },
-  {
-    id: '3',
-    color: 'white',
-    title: 'password generator',
-    desc: 'Classic password generator',
-    img: '/pw-gen.png',
-    link: 'https://pw-gen-classic.netlify.app/',
-  },
-  {
-    id: '4',
-    color: 'white',
-    title: 'hangman',
-    desc: 'A simple hangman game with certain development words',
-    img: '/hangman.png',
-    link: 'https://hangman-23.netlify.app/',
-  },
-];
+import { languagesStore } from '@/app/store/languageState';
+import deData from '@/app/store/languages/de/german.json';
+import engData from '@/app/store/languages/eng/english.json';
 
 const PortfolioPage = () => {
+  const currentLanguage = languagesStore((state) => state.lang);
+
+  const items = [
+    {
+      id: '1',
+      color: 'white',
+      title: 'Rambler',
+      desc: currentLanguage == 'de' ? deData.ramblermsg : engData.ramblermsg,
+      img: '/rambler-app.png',
+      link: 'https://rambler-app.netlify.app/',
+    },
+    {
+      id: '2',
+      color: 'white',
+      title: 'cleanapps beta website',
+      desc:
+        currentLanguage == 'de' ? deData.cleanappsmsg : engData.cleanappsmsg,
+      img: '/cleanapps-beta.png',
+      link: 'https://cleanapps-beta.netlify.app/',
+    },
+    {
+      id: '3',
+      color: 'white',
+      title: 'password generator',
+      desc: currentLanguage == 'de' ? deData.pwgenmsg : engData.pwgenmsg,
+      img: '/pw-gen.png',
+      link: 'https://pw-gen-classic.netlify.app/',
+    },
+    {
+      id: '4',
+      color: 'white',
+      title: 'hangman',
+      desc: currentLanguage == 'de' ? deData.hangmanmsg : engData.hangmanmsg,
+      img: '/hangman.png',
+      link: 'https://hangman-23.netlify.app/',
+    },
+  ];
+
   const containerRef = useRef();
 
   const { scrollYProgress } = useScroll({ container: containerRef });
@@ -60,7 +66,11 @@ const PortfolioPage = () => {
       >
         <div className="h-[600vh] relative" ref={containerRef}>
           <div className="w-screen h-[calc(100vh-6rem)] flex flex-col items-center justify-center text-8xl text-center">
-            <h1 className="text-6xl text-center">My recent Projects</h1>
+            <h1 className="text-6xl text-center">
+              {currentLanguage == 'de'
+                ? deData.portfoliomsg
+                : engData.portfoliomsg}
+            </h1>
             {/* BIOGRAPHY SCROLL SVG */}
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}

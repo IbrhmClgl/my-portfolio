@@ -4,12 +4,17 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import React, { useRef } from 'react';
-
-const text = 'Kontaktiere mich !';
+import { languagesStore } from '@/app/store/languageState';
+import deData from '@/app/store/languages/de/german.json';
+import engData from '@/app/store/languages/eng/english.json';
 
 const ContactPage = () => {
+  const currentLanguage = languagesStore((state) => state.lang);
+  const text = currentLanguage == 'de' ? deData.contactmsg : engData.contactmsg;
+
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [validationError, setValidationError] = useState('');
 
   const form = useRef();
 
@@ -17,6 +22,18 @@ const ContactPage = () => {
     e.preventDefault();
     setError(false);
     setSuccess(false);
+    setValidationError('');
+
+    const userEmail = form.current['user_email'].value.trim();
+    const userMessage = form.current['user_message'].value.trim();
+
+    // Validation
+    if (!userEmail || !userMessage) {
+      setValidationError(
+        currentLanguage == 'de' ? deData.contactmsg6 : engData.contactmsg6
+      );
+      return;
+    }
 
     emailjs
       .sendForm(
@@ -73,30 +90,47 @@ const ContactPage = () => {
           ref={form}
           className="w-1/2 lg:h-full lg:w-1/2 bg-blue-400 rounded-xl text-xl flex flex-col justify-center p-24 gap-8"
         >
-          <span className="text-black">Your message:</span>
+          <span className="text-black">
+            {currentLanguage == 'de' ? deData.contactmsg1 : engData.contactmsg1}
+          </span>
           <textarea
             rows={6}
             className="bg-transparent border-b-2 border-b-black outline-none resize-none text-black"
             name="user_message"
           />
-          <span className="text-black">Your email address is:</span>
+          <span className="text-black">
+            {currentLanguage == 'de' ? deData.contactmsg2 : engData.contactmsg2}
+          </span>
           <input
             name="user_email"
             type="text"
             className="bg-transparent border-b-2 border-b-black outline-none text-black"
           />
-          <span className="text-black">Regards</span>
+          <span className="text-black">
+            {currentLanguage == 'de' ? deData.contactmsg3 : engData.contactmsg3}
+          </span>
           <button className="bg-blue-800 rounded font-semibold text-white p-4">
-            Send
+            {currentLanguage == 'de'
+              ? deData.contactbtnmsg
+              : engData.contactbtnmsg}
           </button>
+          {validationError && (
+            <span className="text-red-600 font-semibold">
+              {validationError}
+            </span>
+          )}
           {success && (
             <span className="text-green-300 font-semibold">
-              Your message has been sent successfully!
+              {currentLanguage == 'de'
+                ? deData.contactmsg4
+                : engData.contactmsg4}
             </span>
           )}
           {error && (
             <span className="text-red-600 font-semibold">
-              Something went wrong!
+              {currentLanguage == 'de'
+                ? deData.contactmsg5
+                : engData.contactmsg5}
             </span>
           )}
         </form>
