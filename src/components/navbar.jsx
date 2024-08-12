@@ -4,12 +4,28 @@ import Link from 'next/link';
 import { useState } from 'react';
 import NavLink from './navLink';
 import { motion } from 'framer-motion';
+import { languagesStore } from '@/app/store/languageState';
 
-const navs = [
-  { url: '/', title: 'Home' },
-  { url: '/about', title: 'About' },
-  { url: '/portfolio', title: 'Portfolio' },
-  { url: '/contact', title: 'Contact' },
+const translations = {
+  en: {
+    home: 'Home',
+    about: 'About',
+    portfolio: 'Portfolio',
+    contact: 'Contact',
+  },
+  de: {
+    home: 'Startseite',
+    about: 'Über',
+    portfolio: 'Portfolio',
+    contact: 'Kontakt',
+  },
+};
+
+const getNavs = (lang) => [
+  { url: `/`, title: translations[lang].home },
+  { url: `/about`, title: translations[lang].about },
+  { url: `/portfolio`, title: translations[lang].portfolio },
+  { url: `/contact`, title: translations[lang].contact },
 ];
 
 const Navbar = () => {
@@ -67,6 +83,16 @@ const Navbar = () => {
       opacity: 1,
     },
   };
+  const currentLanguage = languagesStore((state) => state.lang);
+  const setLanguageInStore = languagesStore((state) => state.setLang);
+
+  const [language, setLanguage] = useState(currentLanguage);
+  const navs = getNavs(language);
+
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang);
+    setLanguageInStore(lang);
+  };
 
   return (
     <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl">
@@ -75,6 +101,25 @@ const Navbar = () => {
         {navs.map((link) => (
           <NavLink link={link} key={link.title} />
         ))}
+      </div>
+      <div className="md:hidden lg:flex xl:w-1/3 xl:justify-center">
+        <Link
+          href="/"
+          className="text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center"
+        >
+          <span
+            onClick={() => handleLanguageChange('de')}
+            className="text-white mr-1 p-3"
+          >
+            DE
+          </span>
+          <span
+            onClick={() => handleLanguageChange('en')}
+            className="w-12 h-8 rounded bg-white text-black flex items-center justify-center"
+          >
+            EN
+          </span>
+        </Link>
       </div>
       <div className="hidden md:flex gap-4 w-1/3">
         {/* Socials */}
@@ -90,6 +135,8 @@ const Navbar = () => {
             height={24}
           />
         </Link>
+        {/* <button onClick={() => handleLanguageChange('en')}>en</button>
+        <button onClick={() => handleLanguageChange('de')}>de</button> */}
       </div>
       {/* Repsonsive Menu */}
       <div className="md:hidden">

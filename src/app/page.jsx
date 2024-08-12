@@ -2,8 +2,12 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { languagesStore } from '@/app/store/languageState';
+import deData from './store/languages/de/german.json';
+import engData from './store/languages/eng/english.json';
 
 const Homepage = () => {
+  const currentLanguage = languagesStore((state) => state.lang);
   return (
     <motion.div
       className="h-full"
@@ -29,23 +33,27 @@ const Homepage = () => {
         {/* Text Container */}
         <div className="h-1/2 lg:h-full lg:w-1/2 lg:p-10 flex flex-col gap-8 items-center justify-center">
           {/* Title */}
-          <h2 className="text-4xl md:text-6xl font-bold">
-            Willkommen auf meinem Portfolio !
+          <h2 id="lptitle" className="text-4xl md:text-6xl font-bold">
+            {currentLanguage == 'de' ? deData.hello : engData.hello}
           </h2>
-          <p className="md:text-xl">
-            Hier findest du einen Überblick über meine Arbeit, meinen Werdegang
-            und die Projekte, die meine Leidenschaft für Programmierung
-            widerspiegeln. Tauche ein in meinen Lebenslauf, um mehr über meine
-            Erfahrungen zu erfahren, und entdecke die spannenden Projekte, an
-            denen ich mit Begeisterung gearbeitet habe.
+          <p id="lpdesc" className="md:text-xl">
+            {currentLanguage == 'de'
+              ? deData.lpDescription
+              : engData.lpDescription}
           </p>
           {/* Buttons */}
-          <div className="w-full flex gap-4">
+          <div id="btnstyle" className="w-full flex gap-4">
             <button className="p-4 rounded-lg ring-1 ring-white bg-black text-white">
-              <a href="/portfolio">Meine Projekte</a>
+              <a href="/portfolio">
+                {currentLanguage == 'de'
+                  ? deData.myprojects
+                  : engData.myprojects}
+              </a>
             </button>
             <button className="p-4 rounded-lg ring-1 ring-white bg-black">
-              <a href="/contact">Kontaktiere mich</a>
+              <a href="/contact">
+                {currentLanguage == 'de' ? deData.contactme : engData.contactme}
+              </a>
             </button>
             <a
               href="/ibrahim-cv.pdf"
