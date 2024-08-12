@@ -19,6 +19,11 @@
   display: none;
 }
 
+#image {
+  filter: drop-shadow(0 0 2.75rem white);
+  opacity: 0.5;
+}
+
 @media screen and (max-width: 390px) {
   #myimage {
     margin-bottom: 70px;

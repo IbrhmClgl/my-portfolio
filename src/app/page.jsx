@@ -26,7 +26,7 @@ const Homepage = () => {
             src="/myimage.png"
             alt=""
             fill
-            className="object-contain rounded-full"
+            className="faded faded-top faded-bottom object-contain"
           />
           <div className="circle"></div>
         </div>
@@ -68,7 +68,5 @@ const Homepage = () => {
     </motion.div>
   );
 };
-
-<style></style>;
 
 export default Homepage;
