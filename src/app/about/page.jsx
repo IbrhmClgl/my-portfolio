@@ -194,10 +194,10 @@ const AboutPage = () => {
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic flex flex-col">
-                    <p>-{currentLanguage == 'de' ? deData.ta1 : engData.ta1}</p>
-                    <p>-{currentLanguage == 'de' ? deData.ta2 : engData.ta2}</p>
-                    <p>-{currentLanguage == 'de' ? deData.ta3 : engData.ta3}</p>
-                    <p>-{currentLanguage == 'de' ? deData.ta4 : engData.ta4}</p>
+                    <p>{currentLanguage == 'de' ? deData.ta1 : engData.ta1}</p>
+                    <p>{currentLanguage == 'de' ? deData.ta2 : engData.ta2}</p>
+                    <p>{currentLanguage == 'de' ? deData.ta3 : engData.ta3}</p>
+                    <p>{currentLanguage == 'de' ? deData.ta4 : engData.ta4}</p>
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-blue-400 text-sm font-semibold">
@@ -261,8 +261,8 @@ const AboutPage = () => {
                   </div>
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic flex flex-col">
-                    <p>-{currentLanguage == 'de' ? deData.ad1 : engData.ad1}</p>
-                    <p>-{currentLanguage == 'de' ? deData.ad2 : engData.ad2}</p>
+                    <p>{currentLanguage == 'de' ? deData.ad1 : engData.ad1}</p>
+                    <p>{currentLanguage == 'de' ? deData.ad2 : engData.ad2}</p>
                   </div>
                   {/* JOB DATE */}
                   <div className="p-3 text-blue-400 text-sm font-semibold">
@@ -304,19 +304,19 @@ const AboutPage = () => {
                   {/* JOB DESC */}
                   <div className="p-3 text-sm italic flex flex-col">
                     <p>
-                      -{currentLanguage == 'de' ? deData.iia1 : engData.iia1}
+                      {currentLanguage == 'de' ? deData.iia1 : engData.iia1}
                     </p>
                     <p>
-                      -{currentLanguage == 'de' ? deData.iia2 : engData.iia2}
+                      {currentLanguage == 'de' ? deData.iia2 : engData.iia2}
                     </p>
                     <p>
-                      -{currentLanguage == 'de' ? deData.iia3 : engData.iia3}
+                      {currentLanguage == 'de' ? deData.iia3 : engData.iia3}
                     </p>
                     <p>
-                      -{currentLanguage == 'de' ? deData.iia4 : engData.iia4}
+                      {currentLanguage == 'de' ? deData.iia4 : engData.iia4}
                     </p>
                     <p>
-                      -{currentLanguage == 'de' ? deData.iia5 : engData.iia5}
+                      {currentLanguage == 'de' ? deData.iia5 : engData.iia5}
                     </p>
                   </div>
                   {/* JOB DATE */}
